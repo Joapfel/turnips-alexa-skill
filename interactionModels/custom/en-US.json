@@ -1,0 +1,116 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "animal crossing",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CapturePriceIntent",
+          "slots": [
+            {
+              "name": "day",
+              "type": "AMAZON.DayOfWeek"
+            },
+            {
+              "name": "dayTime",
+              "type": "AMAZON.TIME"
+            },
+            {
+              "name": "price",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "test ayala drive",
+            "On {day} {dayTime} the price was {price}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CapturePriceIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "day",
+              "type": "AMAZON.DayOfWeek",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.757749196503.784607729755"
+              }
+            },
+            {
+              "name": "dayTime",
+              "type": "AMAZON.TIME",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.757749196503.1112535523420"
+              }
+            },
+            {
+              "name": "price",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.757749196503.1384652101996"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.757749196503.784607729755",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which day of the week are you referring to?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.757749196503.1112535523420",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "AM or PM?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.757749196503.1384652101996",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How is the price per turnip on your island?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "4"
+}
